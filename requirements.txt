@@ -1,0 +1,28 @@
+# FastAPI y servidor
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+
+# Cliente HTTP para consumir APIs externas
+httpx==0.25.2
+
+# Validación y serialización de datos
+pydantic==2.4.2
+
+# Utilidades para desarrollo
+python-multipart==0.0.6
+
+# Variables de entorno (opcional pero recomendado)
+python-dotenv==1.0.0
+
+# Logging mejorado (opcional)
+structlog==23.2.0
+
+# Para testing (opcional - útil para desarrollo)
+pytest==7.4.3
+pytest-asyncio==0.21.1
+
+# Dependencias del sistema que pueden ser necesarias
+# (generalmente se instalan automáticamente)
+typing-extensions==4.8.0
+starlette==0.27.0
+anyio==3.7.1
