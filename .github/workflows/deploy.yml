@@ -97,11 +97,11 @@ jobs:
           echo "Contenedores corriendo:"
           docker ps
           
-          # Verificar específicamente fastapi-proxy
-          if docker ps --format "table {{.Names}}" | grep -q "fastapi-proxy"; then
-            echo "Servicio fastapi-proxy desplegado correctamente"
+          # Verificar específicamente fastapi-container
+          if docker ps --format "table {{.Names}}" | grep -q "fastapi-container"; then
+            echo "Servicio fastapi-container desplegado correctamente"
           else
-            echo "Error: Contenedor fastapi-proxy no está corriendo"
+            echo "Error: Contenedor fastapi-container no está corriendo"
             echo "Logs de deploy.sh:"
             cat deploy.sh
             echo "Todos los contenedores:"
@@ -120,11 +120,11 @@ jobs:
               echo "Health check falló en intento $i, reintentando..."
               if [ $i -eq 8 ]; then
                 echo "Health check falló después de 8 intentos"
-                echo "Logs del contenedor fastapi-proxy:"
-                docker logs fastapi-proxy || echo "No hay logs disponibles"
+                echo "Logs del contenedor fastapi-container:"
+                docker logs fastapi-container || echo "No hay logs disponibles"
                 echo "Estado del contenedor:"
-                docker ps -a | grep fastapi-proxy || echo "Contenedor no encontrado"
-                exit 1
+                docker ps -a | grep fastapi-container || echo "Contenedor no encontrado"
+                                exit 1
               fi
             fi
           done
